@@ -58,10 +58,10 @@ function findMode(arr) {
 function CambiarColor() {
     indice = findMode(indices);
     if (indice == 0) {
-        window.location.href = "pages/home.html?tema=0";
+        window.location.href = "pages/home.php?tema=0";
     } else if (indice == 1) {
-        window.location.href = "pages/home.html?tema=1";
+        window.location.href = "pages/home.php?tema=1";
     } else if (indice == 2) {
-        window.location.href = "pages/home.htm?tema=2";
+        window.location.href = "pages/home.php?tema=2";
     }
 }
