@@ -15,6 +15,9 @@ if ($_GET['tema']=='1'){
     include '../componentes/slider.php';
 }
 ?>
+
 <?php include '../componentes/cards.php' ?>
+<?php include '../componentes/footer.php' ?>
+</div>
 </body>
 </html>

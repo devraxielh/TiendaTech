@@ -1,3 +1,15 @@
+<?php
+require_once 'conexion.php';
+$db = new ConexionDB();
+$sql = "SELECT * FROM menu";
+$resultado = $db->conexion->query($sql);
+$menu = [];
+if ($resultado->num_rows > 0) {
+    while($fila = $resultado->fetch_assoc()) {
+        $menu[] = $fila;
+    }
+}
+?>
 <nav class="navbar navbar-expand-lg bg-body">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
@@ -10,12 +22,19 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
+
+            <?php if (!empty($menu)): ?>
+              <?php foreach ($menu as $m): ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="<?= $m['url']."?tema=".$_GET['tema'] ?>"><?= htmlspecialchars($m['titulo']) ?></a>
+                </li>
+              <?php endforeach; ?>
+              <?php else: ?>
+                <div class="alert alert-danger" role="alert">
+                  No hay menu configurado.
+                </div>
+              <?php endif; ?>
+
             </ul>
           </div>
         </div>

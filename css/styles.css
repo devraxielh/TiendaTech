@@ -25,3 +25,10 @@
     background: linear-gradient(0deg,rgba(0, 0, 0, 1) 40%, rgba(255, 255, 255, 0) 100%);
     bottom: 0px;
 }
+.col-4{
+    margin-top: 20px;
+}
+.productos img{
+    display: block;
+    overflow: hidden;
+}
