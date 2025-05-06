@@ -54,7 +54,9 @@ if ($categorias_r->num_rows > 0) {
 <?php foreach ($productos as $p): ?>
 <div class="col-4">
   <div class="card">
-    <img src="<?= htmlspecialchars($p['img']) ?>" class="card-img-top" alt="..." height="250px">
+    <a href="detalle.php?tema=<?= $_GET['tema'] ?>&id=<?= htmlspecialchars($p['id']) ?>">
+      <img src="<?= htmlspecialchars($p['img']) ?>" class="card-img-top" alt="..." height="250px">
+    </a>
     <div class="card-body">
       <p class="card-text"><?= htmlspecialchars($p['titulo']) ?></p>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#<?= htmlspecialchars($p['id']) ?>">
